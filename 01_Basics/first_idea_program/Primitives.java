@@ -1,5 +1,3 @@
-package com.abhiyanshu;
-
 public class Primitives {
     public static void main(String[] args) {
         // Primitive
