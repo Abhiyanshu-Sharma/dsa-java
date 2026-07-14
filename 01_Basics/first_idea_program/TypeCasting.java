@@ -9,7 +9,7 @@ public class TypeCasting {
         // System.out.println(n);
 
         // Type Casting
-          int num = (int)(67.56f);
+        //   int num = (int)(67.56f);
     //    System.out.println(num);
 
         // automatic type promotions
@@ -44,6 +44,8 @@ public class TypeCasting {
         // float + int - double = double
         System.out.println((f * b) + " " + (i / c) + " " + (d * s));
         System.out.println(result);
+
+        input.close();
 
     }
 }

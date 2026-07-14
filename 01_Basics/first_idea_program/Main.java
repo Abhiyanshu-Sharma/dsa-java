@@ -6,5 +6,7 @@ public class Main {
 
         System.out.print("Enter: ");
         System.out.println(input.nextLine());
+
+        input.close();
     }
 }

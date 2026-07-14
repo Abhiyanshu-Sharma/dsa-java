@@ -10,5 +10,7 @@ public class Sum {
         float sum = n1 + n2;
 
         System.out.println("Sum = " + sum);
+
+        input.close();
     }
 }

@@ -45,5 +45,7 @@ public class Main {
         n2 = sc.nextInt();
         sum = n1 + n2;
         System.out.println("The sum: " + sum);
+
+        sc.close();
     }
 } 
