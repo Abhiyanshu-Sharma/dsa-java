@@ -11,5 +11,7 @@ public class CaseCheck {
         }else {
             System.out.println("Uppercase");
         }
+
+        sc.close();
     }    
 }

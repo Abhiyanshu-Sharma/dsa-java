@@ -49,5 +49,6 @@ public class Calculator {
         System.out.println(ans);
      }
      
+     sc.close();
     }
 }

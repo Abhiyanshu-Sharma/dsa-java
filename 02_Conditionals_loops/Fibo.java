@@ -18,5 +18,6 @@ public class Fibo {
         }
 
         System.out.println(b);
+        sc.close();
     }
 }
