@@ -1,8 +1,11 @@
-public class LC_33_Search_in_a_Rotated_Sorted_Array {
-    
+public class RbsWithDuplicate {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,5,6};
+        System.out.println(findPivotWithDuplicate(arr));
+    }
 
-    static int search(int[] nums, int target) {
-        int pivot = findPivot(nums);
+     static int search(int[] nums, int target) {
+        int pivot = findPivotWithDuplicate(nums);
 
         // if you did not find a pivot, it means the array is not rotated
         if(pivot == -1) {
@@ -38,8 +41,7 @@ public class LC_33_Search_in_a_Rotated_Sorted_Array {
         return -1;
     }
 
-    // This will not work with duplicates (See RbsWithDuplicate.java in 08_Binary_Search)
-    static int findPivot(int[] arr) {
+    static int findPivotWithDuplicate(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
 
@@ -55,13 +57,33 @@ public class LC_33_Search_in_a_Rotated_Sorted_Array {
                 return mid - 1;
             }
 
-            if(arr[mid] <= arr[start]) {
-                end = mid - 1;
-            } else {
-                start = mid + 1;
+        //    if element at middle, start and end are equal then just skip the duplicates
+        if(arr[mid] == arr[start] && arr[mid] == arr[end]) {
+            // skip the duplicates 
+            // NOTE: what if these elements at start and end were the pivot?
+
+            // check if start is pivot
+            if(arr[start] > arr[start + 1]) {
+                return start;
             }
+            start++;
+
+            // check if end is pivot
+            if(arr[end] < arr[end - 1]) {
+                return end - 1;
+            }
+            end++;
+
+        }
+        // left side is sorted, so pivot should be on the right side
+         else if(arr[start] < arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+
             
         }
         return -1;
-    }
+    }    
 }
