@@ -11,5 +11,5 @@ public class LC_832_Filp_an_Image {
             }
         }
         return image;
-    }
+    }   
 }
